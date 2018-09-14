@@ -1,8 +1,8 @@
-# 一个简单的前后端分离案例
+# 孚点便利官网前后端完整项目
 
 
-## 前言
 
+<<<<<<< HEAD
 在学习前端开发的过程中知了前后端分离这个概念
 [前后分离架构的探索之路](https://segmentfault.com/a/1190000003795517)
 [我们为什么要尝试前后端分离](https://segmentfault.com/a/1190000006240370)
@@ -16,6 +16,8 @@
 
 ## 开发环境
 需要本地安装[node](https://nodejs.org/en/),[npm](https://www.npmjs.com/)或[yarn](https://yarnpkg.com/),[mongodb](https://www.mongodb.com/)
+=======
+>>>>>>> 732e6b5450d95bf94c49caf2dcbdbc3bf30d2512
 
 ## 初始化
 首先用vue-cli初始化项目目录
@@ -61,7 +63,6 @@ nodemon app.js
 
 新建movie.js文件或者其他的数据模型,用来提供基础数据.
 
-![movie.js](./demo/moviejs.png)
 
 定义了title,poster,rating,introduction,created_at,update_at几个基本信息,最后将model导出即可.
 

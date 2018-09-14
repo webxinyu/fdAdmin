@@ -12,20 +12,7 @@
 
 ## 简介
 
-一个前后端分离的案例,前端vuejs,后端express,数据库mongodb.
-用express的提供api供前端调用,前端ajax请求进行对数据库的CURD操作.
-
-## 效果图
-首页
-![demo](./demo/demo.png)
-添加电影
-![addMovie](./demo/addMovie.gif)
-更新电影信息
-![editMovie](./demo/editMovie.gif)
-展示电影详情
-![showDetail](./demo/showDetail.gif)
-删除电影
-![removeMovie](./demo/removeMovie.gif)
+前后端分离的孚点商超便利PC官网的完整项目。后台使用express+mongodb。前端原生开发，后台管理系统使用vue框架开发
 
 ## 开发环境
 需要本地安装[node](https://nodejs.org/en/),[npm](https://www.npmjs.com/)或[yarn](https://yarnpkg.com/),[mongodb](https://www.mongodb.com/)

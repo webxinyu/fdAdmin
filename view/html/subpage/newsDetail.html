@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="renderer" content="webkit"> 
+		<title>新闻详情</title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/navAndFooter.css"/>
+		<style type="text/css">
+			header {		/* banner */
+				height: 400px;
+				background: url(../../img/enterpriceInformationBanner.png) no-repeat 50% 50% white;
+			}
+			section {
+				width: 1200px;
+				margin: 60px auto;
+				min-height: 600px;
+			}
+			section>h1 {
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				font-size: 24px;
+				color: #333;
+			}
+			section .bookmakerAndTime {
+				height: 60px;
+				overflow: hidden;
+			}
+			section .bookmakerAndTime>h2 {
+				float: left;
+				height: 60px;
+				line-height: 60px;
+				text-align: right;
+				width: 300px;
+				font-size: 14px;
+				color: #666;
+				font-weight: normal;
+			}
+			section .bookmakerAndTime>h3 {
+				float: right;
+				height: 60px;
+				line-height: 60px;
+				text-align: left;
+				width: 300px;
+				font-size: 14px;
+				color: #666;
+				font-weight: normal;
+			}
+			.newsContent {
+				padding: 0 100px;
+				color: #333;
+			}
+		</style>
+	</head>
+	<body id="body">
+		<!-- 导航 -->
+		<div class="navCon">
+			<nav>
+				<div class="logo">
+					<img src="../../img/logo.png" >
+				</div>
+				<ul class="navList">
+					<li>
+						<span class="navSlider"></span>
+						<a href="../../index.html">首页</a>
+					</li>
+					<li>
+						<span class="navSlider"></span>
+						<a href="../enterpriseInformation.html">企业信息</a>
+					</li>
+					<li>
+						<span class="navSlider"></span>
+						<a href="../brandIdea.html.html">品牌理念</a>
+					</li>	
+					<li>
+						<span class="navSlider"></span>
+						<a href="../recruit.html">招聘信息</a>
+					</li>
+					<li>
+						<span class="navSlider"></span>
+						<a href="../contactUs.html">联系我们</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<!-- banner -->
+		<header></header>
+		<!-- main -->
+		<section>
+			<h1 id="newTitle">好大一颗桃</h1>
+			<div class="bookmakerAndTime">
+				<h2 id="author"></h2>
+				<h3 id="time"></h3>
+			</div>
+			<div class="newsContent">
+				
+			</div>
+		</section>
+		
+		<footer>
+			<div class="footer">
+				<ul class="telAndAddress">
+					<li>
+						<div class="leftIcon">
+							<img src="../../img/locationImg.png" >
+						</div>
+						<div class="rightTxt">
+							<h1>地址</h1>
+							<h2>XXX省XXX市XXX路XXX号</h2>
+						</div>
+					</li>
+					<li>
+						<div class="leftIcon">
+							<img src="../../img/telImg.png" >
+						</div>
+						<div class="rightTxt">
+							<h1>电话</h1>
+							<h2>020-000000 000-000000</h2>
+						</div>
+					</li>
+				</ul>
+				<div class="qrCode">
+					<img src="../../img/fsCode.jpg" >
+					<p>扫一扫，关注我们</p>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>©2018 孚点网络技术有限公司 版权所有</p>
+				<div class="softInformation">
+					<span>备案：豫ICP备15013154号-1</span>
+				</div>
+			</div>
+		</footer>
+		<script src="../../js/jsLibrary/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/navAndFooter.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">				
+			$.ajax({
+				type:"get",
+				url:"http://localhost:3000/api/movie",
+				async:true,
+				success:function(data){
+					var newsList = data;
+					for (var j = 0; j < newsList.length; j++) {
+						if (newsList[j]._id == GetRequest().newsId) {
+							$("#newTitle").html(newsList[j].title);		//标题
+							$("#author").html('<span>作者：</span>'+"xiaofei");		//作者
+							$("#time").html('<span>发布日期：</span>'+newsList[j].update_at.substr(0,10));		//发布日期
+							$(".newsContent").html(newsList[j].introduction);		//新闻内容
+						}
+					}
+				},
+				error:function(msg){
+					console.log(msg);
+				}
+			});
+			/* 获取url参数方法 */
+			function GetRequest() {   
+				var url = location.search; //获取url中"?"符后的字串   
+				var theRequest = new Object();   
+				if (url.indexOf("?") != -1) {   
+					var str = url.substr(1);   
+					strs = str.split("&");   
+					for(var i = 0; i < strs.length; i ++) {   
+						theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);   
+					}   
+				}   
+				return theRequest;   
+			}
+		</script>
+	</body>
+</html>

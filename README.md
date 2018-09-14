@@ -1,14 +1,16 @@
-# 一个简单的前后端分离案例
+# 孚点便利官网前后端完整项目
 
 
 ## 前言
+后台管理系统使用vue框架开发。
+启动后台管理系统
+```bash
+npm install
 
-在学习前端开发的过程中知了前后端分离这个概念
-[前后分离架构的探索之路](https://segmentfault.com/a/1190000003795517)
-[我们为什么要尝试前后端分离](https://segmentfault.com/a/1190000006240370)
-因此决定小试身手,项目中主要使用到的框架和库.
+npm run dev
 
-> vuejs vue-router muse-ui axios express mongoose mongodb......
+
+> 
 
 ## 简介
 

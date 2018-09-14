@@ -1,36 +1,7 @@
 # 孚点便利官网前后端完整项目
 
 
-## 前言
-后台管理系统使用vue框架开发。
-启动后台管理系统
-```bash
-npm install
 
-npm run dev
-
-
-> 
-
-## 简介
-
-一个前后端分离的案例,前端vuejs,后端express,数据库mongodb.
-用express的提供api供前端调用,前端ajax请求进行对数据库的CURD操作.
-
-## 效果图
-首页
-![demo](./demo/demo.png)
-添加电影
-![addMovie](./demo/addMovie.gif)
-更新电影信息
-![editMovie](./demo/editMovie.gif)
-展示电影详情
-![showDetail](./demo/showDetail.gif)
-删除电影
-![removeMovie](./demo/removeMovie.gif)
-
-## 开发环境
-需要本地安装[node](https://nodejs.org/en/),[npm](https://www.npmjs.com/)或[yarn](https://yarnpkg.com/),[mongodb](https://www.mongodb.com/)
 
 ## 初始化
 首先用vue-cli初始化项目目录
@@ -76,7 +47,6 @@ nodemon app.js
 
 新建movie.js文件或者其他的数据模型,用来提供基础数据.
 
-![movie.js](./demo/moviejs.png)
 
 定义了title,poster,rating,introduction,created_at,update_at几个基本信息,最后将model导出即可.
 
